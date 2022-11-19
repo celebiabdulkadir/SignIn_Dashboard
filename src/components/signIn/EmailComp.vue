@@ -8,9 +8,6 @@ const emailHandler = (event) => {
 };
 
 const isValid = computed(() => {
-  console.log(
-    /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(props.email)
-  );
   return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(props.email);
 });
 </script>
@@ -28,4 +25,5 @@ const isValid = computed(() => {
     class="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
     placeholder="Email address"
   />
+  <div v-if="!isValid">Please enter valid e-mail</div>
 </template>

@@ -28,7 +28,7 @@ const handleSignOut = () => {
 
 <template>
   <header>
-    <div class="wrapper">
+    <div class="wrapper bg-neutral-50">
       <!-- <HelloWorld msg="You did it!" /> -->
 
       <nav>

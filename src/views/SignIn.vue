@@ -10,6 +10,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 const email = ref("");
 const password = ref("");
 const errMsg = ref(""); // Error Message
+
 const signIn = async () => {
   let auth = getAuth();
   signInWithEmailAndPassword(auth, email.value, password.value)
@@ -43,8 +44,6 @@ const signIn = async () => {
     });
   // router.push("/dashboard");
 };
-
-console.log("presses");
 </script>
 
 <template>
@@ -63,11 +62,9 @@ console.log("presses");
         <input type="hidden" name="remember" value="true" />
         <div class="-space-y-px rounded-md shadow-sm">
           <div>
-            {{ email }}
             <EmailComp v-model:email="email"></EmailComp>
           </div>
           <div>
-            {{ password }}
             <PasswordComp
               v-model:password="password"
               label="isim"
