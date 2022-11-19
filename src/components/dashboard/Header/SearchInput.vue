@@ -20,7 +20,7 @@
     <input
       type="search"
       name="q"
-      class="py-2 text-sm text-white bg-gray-900 rounded-md pl-10 focus:outline-none focus:bg-white focus:text-gray-900"
+      class="py-2 text-sm text-white bg-gray-200 rounded-md pl-10 focus:outline-none focus:bg-gray-200 focus:text-gray-900"
       placeholder="Search..."
       autocomplete="off"
     />

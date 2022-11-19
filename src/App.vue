@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import { onMounted, ref } from "vue";
+import ButtonComp from "@/components/ButtonComp.vue";
 // import { auth } from "@/db";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import router from "./router";
@@ -32,10 +33,19 @@ const handleSignOut = () => {
       <!-- <HelloWorld msg="You did it!" /> -->
 
       <nav>
-        <RouterLink to="/">Sign In</RouterLink>
+        <RouterLink
+          class="group relative flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+          to="/"
+          >Log In</RouterLink
+        >
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/dashboard">Dashboard</RouterLink>
-        <button @click="handleSignOut" v-if="isloggedIn">Sign Out</button>
+        <ButtonComp
+          class="group relative flex justify-center rounded-md border border-transparent bg-red-400 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+          @signIn="handleSignOut"
+          title="Log Out"
+          v-if="isloggedIn"
+        ></ButtonComp>
       </nav>
     </div>
   </header>
