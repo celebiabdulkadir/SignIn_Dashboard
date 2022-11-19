@@ -72,7 +72,7 @@ import SearchInput from "@/components/dashboard/Header/SearchInput.vue";
       <img
         src="https://picsum.photos/id/1/30/40"
         alt="Picture"
-        class="rounded-full"
+        class="h-8 w-8 rounded-full"
       />
     </div>
 
