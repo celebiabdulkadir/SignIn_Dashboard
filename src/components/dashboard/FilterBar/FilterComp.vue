@@ -1,6 +1,8 @@
+<script setup></script>
+
 <template>
   <div class="flex space-x-96 flex-row border-2 border-gray-100 w-full">
-    <div class="flex space-x-4">
+    <div class="flex space-x-4 mr-48">
       <span
         class="text-gray-500 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-400 curser-pointer hover:text-white"
         aria-current="page"

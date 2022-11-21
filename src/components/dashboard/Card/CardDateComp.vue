@@ -3,7 +3,7 @@ const props = defineProps(["date"]);
 </script>
 
 <template>
-  <div class="mt-5 ml-5 text-gray-200 relative">
+  <div class="mt-5 ml-5 text-gray-400 relative">
     <small>Start Date</small> <br />
     <small class="text-sm">{{ props.date }}</small>
   </div>

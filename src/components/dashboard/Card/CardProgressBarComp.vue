@@ -3,17 +3,17 @@ const props = defineProps(["progress"]);
 </script>
 
 <template>
-  <div class="progressText">
-    Progress <span class="progressBarText">{{ props.progress }}%</span>
+  <div class="progressText ml-2">
+    Progress <span class="progressBarText mr-2">{{ props.progress }}%</span>
   </div>
-  <div class="box">
+  <div class="box mx-2">
     <div class="progressBar" :style="{ width: props.progress + '%' }"></div>
   </div>
 </template>
 
 <style>
 .box {
-  width: 100%;
+  width: 95%;
   height: 8px;
   /* margin-right: 28px;
   margin-left: 28px; */

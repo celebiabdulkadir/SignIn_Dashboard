@@ -3,7 +3,7 @@ import SearchInput from "@/components/dashboard/Header/SearchInput.vue";
 </script>
 
 <template>
-  <div class="flex space-x-4 md:shrink-0">
+  <div class="flex space-x-4 md:shrink-0 mt-2">
     <div class="flex space-x-64">
       <div>Projects</div>
       <div><SearchInput></SearchInput></div>

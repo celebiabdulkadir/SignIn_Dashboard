@@ -2,7 +2,9 @@
 import { ref, onMounted } from "vue";
 import router from "@/router";
 import ButtonComp from "@/components/ButtonComp.vue";
+import { RouterLink, RouterView } from "vue-router";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
+import data from "@/assets/data/data.json";
 let sideBar = [
   { name: "Dashboard", location: "src/assets/SideBarLogos/1.Logo.svg" },
   { name: "Projects", location: "src/assets/SideBarLogos/2.Logo.svg" },
@@ -13,6 +15,17 @@ let sideBar = [
 ];
 
 const isloggedIn = ref(false);
+
+const openPage = (pageName) => {
+  const result = data.filter((item) => {
+    if (item.name === pageName) {
+      console.log(`/dashboard/${item.name}`);
+      router.push(`/dashboard/${item.name}`);
+    }
+  });
+  console.log(result);
+  return result;
+};
 
 const auth = ref();
 console.log(isloggedIn.value);
@@ -34,8 +47,8 @@ const handleSignOut = () => {
 };
 </script>
 <template>
-  <div class="w-60 h-full shadow-md bg-neutral-50 px-1 absolute">
-    <ul class="flex flex-col space-y-5">
+  <div class="w-60 h-full shadow-md bg-neutral-50 px-1 absolute;">
+    <ul class="flex flex-col space-y-1">
       <span
         class="flex space-x-4 items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded mb-6"
       >
@@ -51,6 +64,7 @@ const handleSignOut = () => {
             <circle cx="24" cy="22" r="6" stroke="#1BE3A7" stroke-width="4" />
           </svg>
         </span>
+
         <span class="flex space-x-16">
           <span>ChirKuut</span>
           <span
@@ -75,14 +89,19 @@ const handleSignOut = () => {
         ></span>
       </span>
 
-      <li class="relative" v-for="(item, index) in sideBar" :key="item.name">
+      <li
+        class="relative"
+        v-for="(item, index) in sideBar"
+        :key="item.name"
+        @click="openPage(item.name)"
+      >
         <a
           class="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out"
-          href="#!"
           data-mdb-ripple="true"
           data-mdb-ripple-color="dark"
         >
-          <img :src="item.location" :alt="index" class="mr-4" />{{ item.name }}
+          <img :src="item.location" :alt="index" class="mr-4" />
+          {{ item.name }}
         </a>
       </li>
     </ul>
@@ -96,3 +115,5 @@ const handleSignOut = () => {
     </div>
   </div>
 </template>
+
+<style scoped></style>

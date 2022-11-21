@@ -21,6 +21,44 @@ const router = createRouter({
       meta: {
         requiresAuth: true,
       },
+      children: [
+        {
+          // UserProfile will be rendered inside User's <router-view>
+          // when /user/:id/profile is matched
+          path: "Dashboard",
+          component: () => import("@/components/dashboard/Card/CardComp.vue"),
+        },
+        {
+          // UserProfile will be rendered inside User's <router-view>
+          // when /user/:id/profile is matched
+          path: "Projects",
+          component: () => import("../views/Dashboard.vue"),
+        },
+        {
+          // UserProfile will be rendered inside User's <router-view>
+          // when /user/:id/profile is matched
+          path: "Modules",
+          component: () => import("../views/Modules.vue"),
+        },
+        {
+          // UserProfile will be rendered inside User's <router-view>
+          // when /user/:id/profile is matched
+          path: "Sprint",
+          component: () => import("../views/Sprint.vue"),
+        },
+        {
+          // UserProfile will be rendered inside User's <router-view>
+          // when /user/:id/profile is matched
+          path: "Members",
+          component: () => import("../views/Members.vue"),
+        },
+        {
+          // UserProfile will be rendered inside User's <router-view>
+          // when /user/:id/profile is matched
+          path: "Reports",
+          component: () => import("../views/Reports.vue"),
+        },
+      ],
     },
   ],
 });
@@ -52,21 +90,3 @@ router.beforeEach(async (to, from, next) => {
 });
 
 export default router;
-
-// router.beforeEach((to, next)=>{
-//   if (to.matched.some(record => record.meta.requiresAuth)) {
-//       if (localStorage.getItem('token') == null) {
-//           console.log('Hello JS')
-//         next({
-//           path: '/',
-//           params: { nextUrl: to.fullPath }
-//         }) // I get the error at this level it doesn't recognise next as a function
-//       }
-//       else{
-//           next();
-//       }
-//   }
-//   else {
-//         next()
-//   }
-//   })

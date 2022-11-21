@@ -5,6 +5,11 @@ import CardPicturesComp from "@/components/dashboard/Card/CardPicturesComp.vue";
 import CardProgressBarComp from "@/components/dashboard/Card/CardProgressBarComp.vue";
 import CardInfoComp from "@/components/dashboard/Card/CardInfoComp.vue";
 const props = defineProps(["data"]);
+const filterByName = (name) => {
+  const filtered = data.filter((item) => item.name === name);
+
+  return filtered;
+};
 </script>
 
 <template>
@@ -13,7 +18,7 @@ const props = defineProps(["data"]);
     v-for="item in props.data"
   >
     <div class="flex flex-row justify-between space-x-16 p-2">
-      <div>
+      <div class="ml-2">
         <p>{{ item.title }}</p>
       </div>
       <div class="flex flex-row space-x-4">
