@@ -2,30 +2,34 @@
   <div class="flex space-x-96 flex-row border-2 border-gray-100 w-full">
     <div class="flex space-x-4">
       <span
-        class="text-gray-500 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-white"
+        class="text-gray-500 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-400 curser-pointer hover:text-white"
         aria-current="page"
-        >Dashboard</span
+        >All</span
       >
 
       <span
-        class="text-gray-500 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-        >Team</span
+        class="text-gray-500 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-400 curser-pointer hover:text-white"
+        >Inactive</span
       >
 
       <span
-        class="text-gray-500 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-        >Projects</span
+        class="text-gray-500 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-400 curser-pointer hover:text-white"
+        >Active</span
       >
 
       <span
-        class="text-gray-500 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-        >Calendar</span
+        class="text-gray-500 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-400 curser-pointer hover:text-white"
+        >On hold</span
+      >
+      <span
+        class="text-gray-500 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-400 curser-pointer hover:text-white"
+        >Completed</span
       >
     </div>
 
     <div class="flex align-center w-full">
       <span
-        class="text-gray-500 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+        class="text-gray-500 hover:bg-gray-400 hover:text-white px-3 py-2 curser-pointer rounded-md text-sm font-medium"
       >
         <svg
           width="21"

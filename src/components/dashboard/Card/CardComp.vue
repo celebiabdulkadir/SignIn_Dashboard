@@ -1,8 +1,20 @@
+<script setup>
+import CardStatus from "@/components/dashboard/Card/CardStatus.vue";
+import CardDateComp from "@/components/dashboard/Card/CardDateComp.vue";
+import CardPicturesComp from "@/components/dashboard/Card/CardPicturesComp.vue";
+import CardProgressBarComp from "@/components/dashboard/Card/CardProgressBarComp.vue";
+import CardInfoComp from "@/components/dashboard/Card/CardInfoComp.vue";
+const props = defineProps(["data"]);
+</script>
+
 <template>
-  <div class="bg-gray-200 w-96 h-60">
+  <div
+    class="bg-white w-96 h-60 rounded-md shadow shadow-blue-500/40 hover:shadow-indigo-500/40 relative mt-3 ml-2"
+    v-for="item in props.data"
+  >
     <div class="flex flex-row justify-between space-x-16 p-2">
       <div>
-        <p>Project Title</p>
+        <p>{{ item.title }}</p>
       </div>
       <div class="flex flex-row space-x-4">
         <div>
@@ -33,6 +45,23 @@
             />
           </svg>
         </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div>
+          <CardStatus :status="item.status" />
+        </div>
+        <div class="flex flex-row justify-between mr-2">
+          <div><CardDateComp :date="item.startDate" /></div>
+          <div>
+            <CardInfoComp :task="item.task" :user="item.user"></CardInfoComp>
+          </div>
+        </div>
+      </div>
+      <div>
+        <CardPicturesComp :picture="item.membersPictures" />
+        <CardProgressBarComp :progress="item.progress" />
       </div>
     </div>
   </div>

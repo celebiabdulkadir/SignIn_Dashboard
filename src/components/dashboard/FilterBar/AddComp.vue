@@ -1,6 +1,4 @@
-<script setup>
-import ButtonComp from "@/components/ButtonComp.vue";
-</script>
+<script setup></script>
 
 <template>
   <button>
