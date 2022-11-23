@@ -1,13 +1,11 @@
 <script setup>
-const emits = defineEmits(["add"]);
-
-const addHandler = (event) => {
-  emits("add", event.target.value);
-};
+import { useAddCard } from "@/stores/useAddCard.js";
+const store = useAddCard();
+store.fill();
 </script>
 
 <template>
-  <button @click="addHandler">
+  <button @click="store.open">
     <svg
       class="hover:text-white"
       width="127"

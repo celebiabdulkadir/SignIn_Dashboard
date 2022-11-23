@@ -4,21 +4,18 @@ import SideBar from "@/components/dashboard/SideBar/SideBar.vue";
 import HeaderComp from "@/components/dashboard/Header/HeaderComp.vue";
 import FilterBarUpComp from "@/components/dashboard/FilterBar/FilterBarUpComp.vue";
 import AddPopUpComp from "./AddPopUpComp.vue";
-import data from "@/assets/data/data.json";
 import { RouterLink, RouterView } from "vue-router";
-const showAddPopup = ref(false);
-
-const closePopup = () => {
-  showAddPopup.value = false;
-};
-
-const addCard = () => {
-  showAddPopup.value = true;
-};
+import { useAddCard } from "@/stores/useAddCard.js";
+import ToastMessage from "./ToastMessage.vue";
+const store = useAddCard();
+store.fill();
 </script>
 <template>
-  <div v-if="showAddPopup">
-    <AddPopUpComp :showAddPopup="showAddPopup" @close="closePopup"> </AddPopUpComp>
+  <div v-if="store.showAddPopup">
+    <AddPopUpComp> </AddPopUpComp>
+  </div>
+  <div v-if="store.showToastMessage">
+    <ToastMessage> </ToastMessage>
   </div>
   <div class="flex space-x-2 my-4">
     <div>
@@ -28,11 +25,11 @@ const addCard = () => {
     <div>
       <div class="flex flex-wrap"><HeaderComp></HeaderComp></div>
       <div>
-        <FilterBarUpComp @addCard="addCard" class="flex flex-wrap"></FilterBarUpComp>
+        <FilterBarUpComp class="flex flex-wrap"></FilterBarUpComp>
       </div>
 
       <div class="flex flex-column flex-wrap space-x-2 space-y-3">
-        <RouterView :data="data"></RouterView>
+        <RouterView></RouterView>
       </div>
     </div>
   </div>
