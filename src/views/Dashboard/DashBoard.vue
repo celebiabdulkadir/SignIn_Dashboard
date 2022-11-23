@@ -26,9 +26,9 @@ const addCard = () => {
     </div>
 
     <div>
-      <div><HeaderComp></HeaderComp></div>
+      <div class="flex flex-wrap"><HeaderComp></HeaderComp></div>
       <div>
-        <FilterBarUpComp @addCard="addCard"></FilterBarUpComp>
+        <FilterBarUpComp @addCard="addCard" class="flex flex-wrap"></FilterBarUpComp>
       </div>
 
       <div class="flex flex-column flex-wrap space-x-2 space-y-3">

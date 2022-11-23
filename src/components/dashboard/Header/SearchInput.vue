@@ -1,7 +1,9 @@
 <script setup></script>
 
 <template>
-  <div class="relative text-gray-600 focus-within:text-gray-400 w-80 sm:w-60">
+  <div
+    class="relative text-gray-600 focus-within:text-gray-400 w-80 sm:w-32 md:w-40 lg:w-44 xl:w-52"
+  >
     <span class="absolute inset-y-0 left-0 flex items-center pl-2">
       <button type="submit" class="p-1 focus:outline-none focus:shadow-outline">
         <svg

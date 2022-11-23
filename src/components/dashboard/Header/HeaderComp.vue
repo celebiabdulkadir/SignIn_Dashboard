@@ -3,8 +3,8 @@ import SearchInput from "@/components/dashboard/Header/SearchInput.vue";
 </script>
 
 <template>
-  <div class="flex space-x-4 md:shrink-0 mt-2">
-    <div class="flex space-x-64">
+  <div class="flex space-x-4 sm:space-x-2 mt-2">
+    <div class="flex space-x-64 sm:space-x-4 md:space-x-6 lg:space-x-32">
       <div>Projects</div>
       <div><SearchInput></SearchInput></div>
       <div>
