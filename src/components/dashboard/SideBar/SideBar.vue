@@ -6,10 +6,6 @@ import { RouterLink } from "vue-router";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import sideBar from "@/assets/data/sideBarData.json";
 
-const newSideBar = ref();
-
-newSideBar.value = sideBar;
-
 const isloggedIn = ref(false);
 
 const auth = ref();

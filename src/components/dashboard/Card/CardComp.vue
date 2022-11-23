@@ -50,7 +50,10 @@ store.fill();
             />
           </svg>
         </div>
-        <div class="hover:text-white cursor-pointer" @click="store.openToastMessage">
+        <div
+          class="hover:text-white cursor-pointer"
+          @click="store.openToastMessage(index)"
+        >
           <svg
             fill="#000000"
             xmlns="http://www.w3.org/2000/svg"

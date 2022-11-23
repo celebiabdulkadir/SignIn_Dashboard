@@ -9,6 +9,7 @@ export const useAddCard = defineStore("addCard", {
     title: "",
     status: "",
     startDate: "",
+    index: "",
   }),
   actions: {
     fill() {
@@ -17,8 +18,8 @@ export const useAddCard = defineStore("addCard", {
     add() {
       this.data.push({ title: this.title, startDate: this.startDate });
     },
-    remove(index) {
-      this.data.splice(index, 1);
+    remove() {
+      this.data.splice(this.index, 1);
     },
     close() {
       this.showAddPopup = false;
@@ -26,8 +27,9 @@ export const useAddCard = defineStore("addCard", {
     open() {
       this.showAddPopup = true;
     },
-    openToastMessage() {
+    openToastMessage(index) {
       this.showToastMessage = true;
+      this.index = index;
     },
     closeToastMessage() {
       this.showToastMessage = false;

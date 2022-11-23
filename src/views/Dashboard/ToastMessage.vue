@@ -20,11 +20,12 @@ store.fill();
               <div class="close-icon">X</div>
             </button>
           </div>
-          <div class="flex flex-column">
+          <div class="">
             <div class="flex justify-center">ARE YOU SURE ?</div>
 
             <div class="flex justify-center">
-              <button @click="store.remove(index, 1)">
+              <button @click="store.remove(store.index, 1)">
+                {{ store.index }}
                 <div @click="store.closeToastMessage" class="close-icon">YES</div>
               </button>
             </div>
