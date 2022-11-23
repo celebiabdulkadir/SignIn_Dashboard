@@ -21,36 +21,42 @@ const router = createRouter({
         {
           // UserProfile will be rendered inside User's <router-view>
           // when /user/:id/profile is matched
+          name: "Dashboard",
           path: "Dashboard",
           component: () => import("@/components/dashboard/Card/CardComp.vue"),
         },
         {
           // UserProfile will be rendered inside User's <router-view>
           // when /user/:id/profile is matched
+          name: "Projects",
           path: "Projects",
           component: () => import("@/components/dashboard/Card/CardComp.vue"),
         },
         {
           // UserProfile will be rendered inside User's <router-view>
           // when /user/:id/profile is matched
+          name: "Modules",
           path: "Modules",
           component: () => import("../views/Dashboard/Modules.vue"),
         },
         {
           // UserProfile will be rendered inside User's <router-view>
           // when /user/:id/profile is matched
+          name: "Sprint",
           path: "Sprint",
           component: () => import("../views/Dashboard/Sprint.vue"),
         },
         {
           // UserProfile will be rendered inside User's <router-view>
           // when /user/:id/profile is matched
+          name: "Members",
           path: "Members",
           component: () => import("../views/Dashboard/Members.vue"),
         },
         {
           // UserProfile will be rendered inside User's <router-view>
           // when /user/:id/profile is matched
+          name: "Reports",
           path: "Reports",
           component: () => import("../views/Dashboard/Reports.vue"),
         },
