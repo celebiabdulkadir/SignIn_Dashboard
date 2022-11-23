@@ -2,30 +2,11 @@
 import { ref, onMounted } from "vue";
 import router from "@/router";
 import ButtonComp from "@/components/ButtonComp.vue";
-import { RouterLink, RouterView } from "vue-router";
+import { RouterLink } from "vue-router";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
-import data from "@/assets/data/data.json";
-let sideBar = [
-  { name: "Dashboard", location: "src/assets/SideBarLogos/1.Logo.svg" },
-  { name: "Projects", location: "src/assets/SideBarLogos/2.Logo.svg" },
-  { name: "Modules", location: "src/assets/SideBarLogos/3.Logo.svg" },
-  { name: "Sprint", location: "src/assets/SideBarLogos/4.Logo.svg" },
-  { name: "Members", location: "src/assets/SideBarLogos/5.Logo.svg" },
-  { name: "Reports", location: "src/assets/SideBarLogos/6.Logo.svg" },
-];
+import sideBar from "@/assets/data/sideBarData.json";
 
 const isloggedIn = ref(false);
-
-const openPage = (pageName) => {
-  const result = data.filter((item) => {
-    if (item.name === pageName) {
-      console.log(`/dashboard/${item.name}`);
-      router.push(`/dashboard/${item.name}`);
-    }
-  });
-  console.log(result);
-  return result;
-};
 
 const auth = ref();
 console.log(isloggedIn.value);
@@ -88,22 +69,24 @@ const handleSignOut = () => {
             </svg> </span
         ></span>
       </span>
-
-      <li
-        class="relative"
+      <RouterLink
         v-for="(item, index) in sideBar"
-        :key="item.name"
-        @click="openPage(item.name)"
+        :to="{ path: `/dashboard/${item.name}` }"
       >
-        <a
+        <li
           class="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out"
-          data-mdb-ripple="true"
-          data-mdb-ripple-color="dark"
+          :key="item.name"
         >
-          <img :src="item.location" :alt="index" class="mr-4" />
-          {{ item.name }}
-        </a>
-      </li>
+          <span
+            class="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out"
+            data-mdb-ripple="true"
+            data-mdb-ripple-color="dark"
+          >
+            <img :src="`/${item.location}`" :alt="index" class="mr-4" />
+            {{ item.name }}
+          </span>
+        </li></RouterLink
+      >
     </ul>
     <div class="flex justify-center border-t-2 border-gray-200">
       <ButtonComp
@@ -116,4 +99,8 @@ const handleSignOut = () => {
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.router-link-active {
+  @apply bg-gray-200;
+}
+</style>

@@ -1,0 +1,8 @@
+[
+  { "name": "Dashboard", "location": "src/assets/SideBarLogos/1.Logo.svg" },
+  { "name": "Projects", "location": "src/assets/SideBarLogos/2.Logo.svg" },
+  { "name": "Modules", "location": "src/assets/SideBarLogos/3.Logo.svg" },
+  { "name": "Sprint", "location": "src/assets/SideBarLogos/4.Logo.svg" },
+  { "name": "Members", "location": "src/assets/SideBarLogos/5.Logo.svg" },
+  { "name": "Reports", "location": "src/assets/SideBarLogos/6.Logo.svg" }
+]

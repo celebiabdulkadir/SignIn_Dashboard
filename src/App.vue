@@ -1,8 +1,6 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import { onMounted, ref } from "vue";
-import ButtonComp from "@/components/ButtonComp.vue";
-// import { auth } from "@/db";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import router from "./router";
 const isloggedIn = ref(false);

@@ -4,8 +4,10 @@ import CardDateComp from "@/components/dashboard/Card/CardDateComp.vue";
 import CardPicturesComp from "@/components/dashboard/Card/CardPicturesComp.vue";
 import CardProgressBarComp from "@/components/dashboard/Card/CardProgressBarComp.vue";
 import CardInfoComp from "@/components/dashboard/Card/CardInfoComp.vue";
+const emits = defineEmits(["filterStatus"]);
 const props = defineProps(["data"]);
 const filterByName = (name) => {
+  emit("filterStatus");
   const filtered = data.filter((item) => item.name === name);
 
   return filtered;
@@ -17,7 +19,10 @@ const filterByName = (name) => {
     class="bg-white w-96 h-60 rounded-md shadow shadow-blue-500/40 hover:shadow-indigo-500/40 relative mt-3 ml-2"
     v-for="item in props.data"
   >
-    <div class="flex flex-row justify-between space-x-16 p-2">
+    <div
+      class="flex flex-row justify-between space-x-16 p-2"
+      @click="filterByName(item.status)"
+    >
       <div class="ml-2">
         <p>{{ item.title }}</p>
       </div>

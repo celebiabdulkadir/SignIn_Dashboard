@@ -9,15 +9,11 @@ const router = createRouter({
       name: "signin",
       component: () => import("../views/SignIn.vue"),
     },
-    {
-      path: "/about",
-      name: "about",
-      component: () => import("../views/AboutView.vue"),
-    },
+
     {
       path: "/dashboard",
       name: "dashboard",
-      component: () => import("../views/DashBoard.vue"),
+      component: () => import("../views/Dashboard/DashBoard.vue"),
       meta: {
         requiresAuth: true,
       },
@@ -32,31 +28,31 @@ const router = createRouter({
           // UserProfile will be rendered inside User's <router-view>
           // when /user/:id/profile is matched
           path: "Projects",
-          component: () => import("../views/Dashboard.vue"),
+          component: () => import("@/components/dashboard/Card/CardComp.vue"),
         },
         {
           // UserProfile will be rendered inside User's <router-view>
           // when /user/:id/profile is matched
           path: "Modules",
-          component: () => import("../views/Modules.vue"),
+          component: () => import("../views/Dashboard/Modules.vue"),
         },
         {
           // UserProfile will be rendered inside User's <router-view>
           // when /user/:id/profile is matched
           path: "Sprint",
-          component: () => import("../views/Sprint.vue"),
+          component: () => import("../views/Dashboard/Sprint.vue"),
         },
         {
           // UserProfile will be rendered inside User's <router-view>
           // when /user/:id/profile is matched
           path: "Members",
-          component: () => import("../views/Members.vue"),
+          component: () => import("../views/Dashboard/Members.vue"),
         },
         {
           // UserProfile will be rendered inside User's <router-view>
           // when /user/:id/profile is matched
           path: "Reports",
-          component: () => import("../views/Reports.vue"),
+          component: () => import("../views/Dashboard/Reports.vue"),
         },
       ],
     },

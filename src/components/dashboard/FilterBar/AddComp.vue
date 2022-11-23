@@ -1,7 +1,13 @@
-<script setup></script>
+<script setup>
+const emits = defineEmits(["add"]);
+
+const addHandler = (event) => {
+  emits("add", event.target.value);
+};
+</script>
 
 <template>
-  <button>
+  <button @click="addHandler">
     <svg
       class="hover:text-white"
       width="127"
