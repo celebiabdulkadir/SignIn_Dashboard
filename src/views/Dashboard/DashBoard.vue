@@ -7,6 +7,7 @@ import AddPopUpComp from "./AddPopUpComp.vue";
 import { RouterLink, RouterView } from "vue-router";
 import { useAddCard } from "@/stores/useAddCard.js";
 import ToastMessage from "./ToastMessage.vue";
+import EditToastScreen from "./EditToastScreen.vue";
 const store = useAddCard();
 store.fill();
 </script>
@@ -14,9 +15,13 @@ store.fill();
   <div v-if="store.showAddPopup">
     <AddPopUpComp> </AddPopUpComp>
   </div>
+  <div v-if="store.showEditToastMessage">
+    <EditToastScreen> </EditToastScreen>
+  </div>
   <div v-if="store.showToastMessage">
     <ToastMessage> </ToastMessage>
   </div>
+
   <div class="flex space-x-2 my-4">
     <div>
       <SideBar></SideBar>

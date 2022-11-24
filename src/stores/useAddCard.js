@@ -6,6 +6,7 @@ export const useAddCard = defineStore("addCard", {
     data: [],
     showAddPopup: false,
     showToastMessage: false,
+    showEditToastMessage: false,
     title: "",
     status: "",
     startDate: "",
@@ -32,6 +33,7 @@ export const useAddCard = defineStore("addCard", {
     },
     open() {
       this.showAddPopup = true;
+      this.resetBeforeAdd();
     },
     openToastMessage(index) {
       this.showToastMessage = true;
@@ -39,6 +41,33 @@ export const useAddCard = defineStore("addCard", {
     },
     closeToastMessage() {
       this.showToastMessage = false;
+    },
+    openEditToastMessage(index) {
+      this.showEditToastMessage = true;
+      this.index = index;
+      this.resetBeforeEdit();
+    },
+    closeEditToastMessage() {
+      this.showEditToastMessage = false;
+    },
+    resetBeforeAdd() {
+      this.title = "";
+      this.status = "";
+      this.startDate = "";
+      this.progress = "";
+    },
+    resetBeforeEdit() {
+      this.title = this.data[this.index].title;
+      this.status = this.data[this.index].status;
+      this.startDate = this.data[this.index].startDate;
+      this.progress = this.data[this.index].progress;
+    },
+    edit(index) {
+      this.data[this.index].title = this.title;
+      this.data[this.index].status = this.status;
+      this.data[this.index].startDate = this.startDate;
+      this.data[this.index].progress = this.progress;
+      this.index = index;
     },
   },
 });

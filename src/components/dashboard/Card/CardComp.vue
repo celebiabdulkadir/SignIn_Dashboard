@@ -20,7 +20,10 @@ store.fill();
         <p>{{ item.title }}</p>
       </div>
       <div class="flex flex-row space-x-4">
-        <div class="hover:text-white cursor-pointer">
+        <div
+          class="hover:text-white cursor-pointer"
+          @click="store.openEditToastMessage(index)"
+        >
           <svg
             width="16"
             height="16"
