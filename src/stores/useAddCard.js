@@ -10,13 +10,19 @@ export const useAddCard = defineStore("addCard", {
     status: "",
     startDate: "",
     index: "",
+    progress: 0,
   }),
   actions: {
     fill() {
       this.data = data;
     },
     add() {
-      this.data.push({ title: this.title, startDate: this.startDate });
+      this.data.push({
+        title: this.title,
+        startDate: this.startDate,
+        status: this.status,
+        progress: this.progress,
+      });
     },
     remove() {
       this.data.splice(this.index, 1);

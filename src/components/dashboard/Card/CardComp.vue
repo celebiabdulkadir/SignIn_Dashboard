@@ -1,5 +1,4 @@
 <script setup>
-import { ref } from "vue";
 import CardStatus from "@/components/dashboard/Card/CardStatus.vue";
 import CardDateComp from "@/components/dashboard/Card/CardDateComp.vue";
 import CardPicturesComp from "@/components/dashboard/Card/CardPicturesComp.vue";

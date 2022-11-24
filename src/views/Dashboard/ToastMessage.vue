@@ -1,5 +1,4 @@
 <script setup>
-import { ref } from "vue";
 import { useAddCard } from "@/stores/useAddCard.js";
 const store = useAddCard();
 store.fill();
@@ -20,19 +19,23 @@ store.fill();
               <div class="close-icon">X</div>
             </button>
           </div>
-          <div class="">
+          <div class="mb-2 text-sm font-normal">
             <div class="flex justify-center">ARE YOU SURE ?</div>
-
-            <div class="flex justify-center">
-              <button @click="store.remove(store.index, 1)">
-                {{ store.index }}
-                <div @click="store.closeToastMessage" class="close-icon">YES</div>
-              </button>
-            </div>
-            <div class="flex flex-row justify-center">
-              <button @click="store.closeToastMessage">
-                <div>NO</div>
-              </button>
+            <div class="grid grid-cols-2 gap-2">
+              <div
+                class="inline-flex justify-center w-full px-2 py-1.5 text-xs font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-500 dark:hover:bg-blue-600 dark:focus:ring-blue-800"
+              >
+                <button @click="store.remove(store.index, 1)">
+                  <div @click="store.closeToastMessage" class="close-icon">YES</div>
+                </button>
+              </div>
+              <div
+                class="inline-flex justify-center w-full px-2 py-1.5 text-xs font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-500 dark:hover:bg-blue-600 dark:focus:ring-blue-800"
+              >
+                <button @click="store.closeToastMessage">
+                  <div>NO</div>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -40,6 +43,7 @@ store.fill();
     </div>
   </Teleport>
 </template>
+
 <style scoped>
 .addCard {
   min-width: 450px;

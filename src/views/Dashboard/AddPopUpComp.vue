@@ -1,5 +1,4 @@
 <script setup>
-import { ref } from "vue";
 import { useAddCard } from "@/stores/useAddCard.js";
 const store = useAddCard();
 store.fill();
@@ -15,24 +14,27 @@ store.fill();
         class="relative top-60 mx-auto p-5 border w-96 h-96 shadow-lg rounded-md bg-white"
       >
         <div class="modal-container">
-          <div justify-end>
+          <div class="flex justify-end">
             <button @click="store.close">
               <div class="close-icon">X</div>
             </button>
           </div>
-          <div>
+          <div class="flex justify-center bg-slate-200">
             <button @click="store.add">
               <div class="close-icon">ADD</div>
             </button>
           </div>
-          <div>
+          <div class="flex justify-center">
             <input type="text" placeholder="title" v-model="store.title" />
           </div>
-          <div>
+          <div class="flex justify-center">
             <input type="text" placeholder="start Date" v-model="store.startDate" />
           </div>
-          <div>
+          <div class="flex justify-center">
             <input type="text" placeholder="status" v-model="store.status" />
+          </div>
+          <div class="flex justify-center">
+            <input type="text" placeholder="proogress" v-model="store.progress" />
           </div>
         </div>
       </div>
