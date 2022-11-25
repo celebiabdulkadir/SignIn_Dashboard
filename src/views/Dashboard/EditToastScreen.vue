@@ -20,7 +20,7 @@ store.fill();
             </button>
           </div>
           <div class="flex justify-center bg-slate-200">
-            <button @click="store.edit(store.index)">
+            <button @click="store.edit(store.id)">
               <div class="close-icon">EDIT</div>
             </button>
           </div>
@@ -28,16 +28,30 @@ store.fill();
             <input type="text" placeholder="title" v-model="store.title" />
           </div>
           <div class="flex justify-center">
-            <input type="text" placeholder="start Date" v-model="store.startDate" />
+            <input type="date" placeholder="start Date" v-model="store.startDate" />
           </div>
           <div class="flex justify-center">
             <input type="text" placeholder="status" v-model="store.status" />
           </div>
           <div class="flex justify-center">
-            <input type="text" placeholder="proogress" v-model="store.progress" />
+            <input type="number" placeholder="progress" v-model="store.progress" />
+          </div>
+          <div class="flex justify-center">
+            <input type="number" placeholder="task" v-model="store.task" />
+          </div>
+          <div class="flex justify-center">
+            <input type="number" placeholder="user" v-model="store.user" />
+          </div>
+
+          <div class="flex justify-center">
+            <input
+              type="text"
+              placeholder="membersPictures"
+              v-model="store.membersPictures"
+            />
           </div>
           <div>
-            <p>Edited</p>
+            <p>{{ store.id }}</p>
           </div>
         </div>
       </div>

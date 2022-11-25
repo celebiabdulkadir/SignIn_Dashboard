@@ -13,7 +13,7 @@ store.fill();
 <template>
   <div
     class="bg-white w-96 h-60 rounded-md shadow shadow-blue-500/40 hover:shadow-indigo-500/40 relative mt-3 ml-2"
-    v-for="(item, index) in store.data"
+    v-for="item in store.data"
   >
     <div class="flex flex-row justify-between space-x-16 p-2">
       <div class="ml-2">
@@ -22,7 +22,7 @@ store.fill();
       <div class="flex flex-row space-x-4">
         <div
           class="hover:text-white cursor-pointer"
-          @click="store.openEditToastMessage(index)"
+          @click="store.openEditToastMessage(item.id)"
         >
           <svg
             width="16"
@@ -54,7 +54,7 @@ store.fill();
         </div>
         <div
           class="hover:text-white cursor-pointer"
-          @click="store.openToastMessage(index)"
+          @click="store.openToastMessage(item.id)"
         >
           <svg
             fill="#000000"

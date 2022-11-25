@@ -1,7 +1,16 @@
 <script setup>
 import { useAddCard } from "@/stores/useAddCard.js";
+// import { collection, onSnapshot, addDoc, deleteDoc, updateDoc } from "firebase/firestore";
+// import { db } from "@/main";
 const store = useAddCard();
 store.fill();
+// const firebasecol = collection(db, "1");
+
+// onSnapshot(firebasecol, (snapshot) => {
+//   snapshot.docs.map((member) => {
+//     console.log(member.data());
+//   });
+// });
 </script>
 
 <template>
@@ -28,13 +37,19 @@ store.fill();
             <input type="text" placeholder="title" v-model="store.title" />
           </div>
           <div class="flex justify-center">
-            <input type="text" placeholder="start Date" v-model="store.startDate" />
+            <input type="date" placeholder="start Date" v-model="store.startDate" />
           </div>
           <div class="flex justify-center">
             <input type="text" placeholder="status" v-model="store.status" />
           </div>
           <div class="flex justify-center">
-            <input type="text" placeholder="proogress" v-model="store.progress" />
+            <input type="number" placeholder="progress" v-model="store.progress" />
+          </div>
+          <div class="flex justify-center">
+            <input type="number" placeholder="task" v-model="store.task" />
+          </div>
+          <div class="flex justify-center">
+            <input type="number" placeholder="user" v-model="store.user" />
           </div>
         </div>
       </div>

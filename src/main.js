@@ -3,6 +3,7 @@ import { createPinia } from "pinia";
 import App from "./App.vue";
 import router from "./router";
 import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 
 import "@/main.css";
 const firebaseConfig = {
@@ -16,6 +17,8 @@ const firebaseConfig = {
 
 // Initialize Firebase
 initializeApp(firebaseConfig);
+
+export const db = getFirestore(initializeApp(firebaseConfig));
 const app = createApp(App);
 
 app.use(createPinia());

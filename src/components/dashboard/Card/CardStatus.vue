@@ -7,18 +7,18 @@ const props = defineProps(["status"]);
     <div
       class="circle flex flex-row justify-center align-middle"
       :class="{
-        circleActive: props.status === `Active`,
-        circleInactive: props.status === `Inactive`,
-        circleHold: props.status === `On Hold`,
+        circleActive: props.status?.toLowerCase() === `active`,
+        circleInactive: props.status?.toLowerCase() === `inactive`,
+        circleHold: props.status?.toLowerCase() === `on hold`,
       }"
     ></div>
     <div>
       <p
         class="card__status flex"
         :class="{
-          statusActive: props.status === `Active`,
-          statusInactive: props.status === `Inactive`,
-          statusHold: props.status === `On Hold`,
+          statusActive: props.status?.toLowerCase() === `active`,
+          statusInactive: props.status?.toLowerCase() === `inactive`,
+          statusHold: props.status?.toLowerCase() === `on hold`,
         }"
       >
         {{ props.status }}
