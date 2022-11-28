@@ -13,7 +13,7 @@ import {
 } from "firebase/firestore";
 import { db } from "@/main";
 
-const data = ref();
+const data = ref([]);
 const projectsCollection = collection(db, "Projects");
 
 const deleteObj = async (id) => {
@@ -22,6 +22,7 @@ const deleteObj = async (id) => {
 
 onSnapshot(projectsCollection, (querySnapshot) => {
   const rawData = [];
+  console.log(rawData);
   querySnapshot.forEach((doc) => {
     const cardData = { ...doc.data(), id: doc.id };
     rawData.push(cardData);
@@ -29,13 +30,12 @@ onSnapshot(projectsCollection, (querySnapshot) => {
   data.value = rawData;
 });
 
-// console.log(cities.value);
-
-// console.log(unsubscribe);
-console.log(data);
+console.log(data.value);
 export const useAddCard = defineStore("addCard", {
   state: () => ({
     data: [],
+    filteredData: [],
+    sideBarStatus: false,
     showAddPopup: false,
     showToastMessage: false,
     showEditToastMessage: false,
@@ -51,12 +51,26 @@ export const useAddCard = defineStore("addCard", {
   actions: {
     fill() {
       this.data = data;
+      this.filteredData = data;
     },
-    // getId() {
-    //   allId.filter((id) => {
-    //     id === this.id;
-    //   });
-    // },
+    sideBarChange() {
+      console.log(this.sideBarStatus);
+      this.sideBarStatus = !this.sideBarStatus;
+    },
+    filterData(selectedTab) {
+      this.selectedTab = selectedTab;
+    },
+    filterDataFunc(selectedTab) {
+      if (this.selectedTab === "All") {
+        return (this.filteredData = data);
+      }
+      //   console.log(this.data.filter((item) => item.status === selectedTab));
+      const filtered = Array.from(this.data).filter(
+        (item) => item.status === this.selectedTab
+      );
+      console.log(filtered);
+      return (this.filteredData = filtered);
+    },
     add() {
       addDoc(projectsCollection, {
         status: this.status,
@@ -68,8 +82,8 @@ export const useAddCard = defineStore("addCard", {
         membersPictures: this.membersPictures,
       });
     },
-    remove(id) {
-      deleteObj(this.id);
+    async remove(id) {
+      await deleteObj(this.id);
     },
     close() {
       this.showAddPopup = false;
@@ -81,8 +95,6 @@ export const useAddCard = defineStore("addCard", {
     openToastMessage(id) {
       this.showToastMessage = true;
       this.id = id;
-
-      //   this.id = this.getId();
     },
 
     closeToastMessage() {
@@ -91,13 +103,6 @@ export const useAddCard = defineStore("addCard", {
     openEditToastMessage(id) {
       this.showEditToastMessage = true;
       this.id = id;
-      //   this.resetBeforeEdit();
-      //   this.resetBeforeEdit();
-      //   this.title = this.data[this.id].title;
-      //   this.data[this.id].status = this.status;
-      //   this.data[this.id].startDate = this.startDate;
-      //   this.data[this.id].progress = this.progress;
-      //   this.resetBeforeEdit();
     },
     closeEditToastMessage() {
       this.showEditToastMessage = false;
@@ -110,15 +115,7 @@ export const useAddCard = defineStore("addCard", {
 
       (this.task = ""), (this.user = ""), (this.membersPictures = []);
     },
-    resetBeforeEdit() {
-      this.title = title;
-      this.status = status;
-      startDate = this.startDate;
-      progress = this.progress;
-      task = this.task;
-      user = this.user;
-      membersPictures = this.membersPictures;
-    },
+
     async edit(id) {
       await setDoc(doc(db, "Projects", `${id}`), {
         title: this.title,

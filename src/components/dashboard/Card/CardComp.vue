@@ -1,11 +1,12 @@
 <script setup>
+import { ref } from "vue";
 import CardStatus from "@/components/dashboard/Card/CardStatus.vue";
 import CardDateComp from "@/components/dashboard/Card/CardDateComp.vue";
 import CardPicturesComp from "@/components/dashboard/Card/CardPicturesComp.vue";
 import CardProgressBarComp from "@/components/dashboard/Card/CardProgressBarComp.vue";
 import CardInfoComp from "@/components/dashboard/Card/CardInfoComp.vue";
-
 import { useAddCard } from "@/stores/useAddCard.js";
+
 const store = useAddCard();
 store.fill();
 </script>
