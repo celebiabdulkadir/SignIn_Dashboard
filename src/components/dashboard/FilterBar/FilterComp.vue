@@ -17,9 +17,16 @@ const filterTabData = ["All", "Active", "Inactive", "On Hold"];
         v-for="status in filterTabData"
         class="text-gray-500 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-400 curser-pointer hover:text-white cursor-pointer"
         @click="store.filterData(status)"
+        :class="{ active: store.selectedTab == status }"
       >
         {{ status }}
       </li>
     </ul>
   </div>
 </template>
+
+<style scoped>
+.active {
+  @apply bg-gray-300;
+}
+</style>

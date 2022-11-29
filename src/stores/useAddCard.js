@@ -35,7 +35,7 @@ export const useAddCard = defineStore("addCard", {
   state: () => ({
     data: [],
     filteredData: [],
-    sideBarStatus: false,
+    sideBarStatus: true,
     showAddPopup: false,
     showToastMessage: false,
     showEditToastMessage: false,
@@ -82,6 +82,7 @@ export const useAddCard = defineStore("addCard", {
         user: this.user,
         membersPictures: this.membersPictures,
       });
+      this.showAddPopup = false;
     },
     async remove(id) {
       await deleteObj(this.id);
@@ -127,6 +128,7 @@ export const useAddCard = defineStore("addCard", {
         user: this.user,
         membersPictures: this.membersPictures,
       });
+      this.showEditToastMessage = false;
     },
   },
   getters: {
