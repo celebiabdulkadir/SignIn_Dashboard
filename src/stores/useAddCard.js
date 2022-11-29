@@ -47,6 +47,7 @@ export const useAddCard = defineStore("addCard", {
     task: "",
     user: "",
     membersPictures: [],
+    selectedTab: "All",
   }),
   actions: {
     fill() {
@@ -60,17 +61,17 @@ export const useAddCard = defineStore("addCard", {
     filterData(selectedTab) {
       this.selectedTab = selectedTab;
     },
-    filterDataFunc(selectedTab) {
-      if (this.selectedTab === "All") {
-        return (this.filteredData = data);
-      }
-      //   console.log(this.data.filter((item) => item.status === selectedTab));
-      const filtered = Array.from(this.data).filter(
-        (item) => item.status === this.selectedTab
-      );
-      console.log(filtered);
-      return (this.filteredData = filtered);
-    },
+    // filterDataFunc(selectedTab) {
+    //   if (this.selectedTab === "All") {
+    //     return (this.filteredData = data);
+    //   }
+    //   //   console.log(this.data.filter((item) => item.status === selectedTab));
+    //   const filtered = Array.from(this.data).filter(
+    //     (item) => item.status === this.selectedTab
+    //   );
+    //   console.log(filtered);
+    //   return (this.filteredData = filtered);
+    // },
     add() {
       addDoc(projectsCollection, {
         status: this.status,
@@ -126,6 +127,19 @@ export const useAddCard = defineStore("addCard", {
         user: this.user,
         membersPictures: this.membersPictures,
       });
+    },
+  },
+  getters: {
+    filteredDataForSmt(state) {
+      if (state.selectedTab === "All") {
+        console.log(this.data);
+        return this.data;
+      }
+      //   console.log(this.data.filter((item) => item.status === selectedTab));
+
+      return Array.from(state.data).filter(
+        (item) => item.status === state.selectedTab
+      );
     },
   },
 });

@@ -31,7 +31,12 @@ store.fill();
             <input type="date" placeholder="start Date" v-model="store.startDate" />
           </div>
           <div class="flex justify-center">
-            <input type="text" placeholder="status" v-model="store.status" />
+            <select v-model="store.status">
+              <option value="" disabled selected>Select status</option>
+              <option value="Active">Active</option>
+              <option value="Inactive">Inactive</option>
+              <option value="On Hold">On Hold</option>
+            </select>
           </div>
           <div class="flex justify-center">
             <input type="number" placeholder="progress" v-model="store.progress" />

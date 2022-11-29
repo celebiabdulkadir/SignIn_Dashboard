@@ -7,7 +7,7 @@ store.fill();
 //   console.log(status);
 //   ;
 // };
-const filterTabData = ["All", "Active", "Inactive", "On Hold", "Completed"];
+const filterTabData = ["All", "Active", "Inactive", "On Hold"];
 </script>
 
 <template>
