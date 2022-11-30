@@ -5,3 +5,15 @@
 html {
   @apply bg-neutral-50;
 }
+
+button:disabled,
+button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
+button:disabled:hover {
+  opacity: 1;
+  background: #cccccc;
+}

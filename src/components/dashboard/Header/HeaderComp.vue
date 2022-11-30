@@ -8,14 +8,14 @@ const props = defineProps(["title"]);
 </script>
 
 <template>
-  <div class="flex space-x-4 sm:space-x-2 mt-2">
-    <div class="flex space-x-64 sm:space-x-4 md:space-x-6 lg:space-x-32 xl:space-x-64">
+  <div class="flex space-x-4 sm:space-x-2 mt-2 w-full">
+    <div class="flex space-x-64 sm:space-x-4 md:space-x-28 lg:space-x-32 xl:space-x-64">
       <div
-        class="flex items-center overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out"
+        class="flex justify-center overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out"
       >
         {{ store.currentRouteName }}
       </div>
-      <div><SearchInput></SearchInput></div>
+      <div class=""><SearchInput></SearchInput></div>
       <div>
         <svg
           width="24"
@@ -86,8 +86,7 @@ const props = defineProps(["title"]);
     </div>
 
     <div>
-      <div>Profile Name</div>
-      <div>E mail</div>
+      <div><small>user-mail</small></div>
     </div>
   </div>
 </template>

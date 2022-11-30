@@ -22,7 +22,7 @@ store.fill();
     <ToastMessage> </ToastMessage>
   </div>
 
-  <div class="flex space-x-2 my-4">
+  <div class="flex space-x-2 sm:space-x-1 my-4">
     <div>
       <SideBar></SideBar>
     </div>

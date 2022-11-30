@@ -11,16 +11,17 @@ const store = useAddCard();
 store.fill();
 
 const cards = computed(() => {
+  console.log(store.filteredDataForSmt);
   return store.filteredDataForSmt;
 });
 </script>
 
 <template>
   <div
-    class="bg-white w-96 h-60 rounded-md shadow shadow-blue-500/40 hover:shadow-indigo-500/40 relative mt-3 ml-2"
+    class="bg-white w-96 sm:w-72 h-60 rounded-md shadow shadow-blue-500/40 hover:shadow-indigo-500/40 relative mt-3 ml-2"
     v-for="item in cards"
   >
-    <div class="flex flex-row justify-between space-x-16 p-2">
+    <div class="flex flex-row justify-between p-2">
       <div class="ml-2">
         <p>{{ item.title }}</p>
       </div>

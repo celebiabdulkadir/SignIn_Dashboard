@@ -4,12 +4,9 @@ import {
   collection,
   onSnapshot,
   addDoc,
-  getDocs,
   setDoc,
   deleteDoc,
   doc,
-  updateDoc,
-  query,
 } from "firebase/firestore";
 import { db } from "@/main";
 
@@ -34,7 +31,6 @@ console.log(data.value);
 export const useAddCard = defineStore("addCard", {
   state: () => ({
     data: [],
-    filteredData: [],
     sideBarStatus: true,
     showAddPopup: false,
     showToastMessage: false,
@@ -52,7 +48,6 @@ export const useAddCard = defineStore("addCard", {
   actions: {
     fill() {
       this.data = data;
-      this.filteredData = data;
     },
     sideBarChange() {
       console.log(this.sideBarStatus);
@@ -61,17 +56,7 @@ export const useAddCard = defineStore("addCard", {
     filterData(selectedTab) {
       this.selectedTab = selectedTab;
     },
-    // filterDataFunc(selectedTab) {
-    //   if (this.selectedTab === "All") {
-    //     return (this.filteredData = data);
-    //   }
-    //   //   console.log(this.data.filter((item) => item.status === selectedTab));
-    //   const filtered = Array.from(this.data).filter(
-    //     (item) => item.status === this.selectedTab
-    //   );
-    //   console.log(filtered);
-    //   return (this.filteredData = filtered);
-    // },
+
     add() {
       addDoc(projectsCollection, {
         status: this.status,
@@ -105,6 +90,17 @@ export const useAddCard = defineStore("addCard", {
     openEditToastMessage(id) {
       this.showEditToastMessage = true;
       this.id = id;
+
+      return Array.from(this.data).map((item) => {
+        if (item.id === id) {
+          this.title = item.title;
+          this.status = item.status;
+          this.startDate = item.startDate;
+          this.progress = item.progress;
+          this.task = item.task;
+          this.user = item.user;
+        }
+      });
     },
     closeEditToastMessage() {
       this.showEditToastMessage = false;

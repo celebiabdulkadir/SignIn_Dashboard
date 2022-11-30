@@ -35,7 +35,7 @@ const handleSignOut = () => {
 };
 </script>
 <template>
-  <div v-if="store.sideBarStatus" class="px-2 py-4">
+  <div v-if="store.sideBarStatus" class="px-2 py-3">
     <span @click="sideBarHandler()" class="cursor-pointer">
       <svg
         width="21"
@@ -57,7 +57,7 @@ const handleSignOut = () => {
       </svg>
     </span>
   </div>
-  <div class="w-54 h-full shadow-md bg-neutral-50 px-1 absolute;" v-else>
+  <div class="w-54 h-full sm:w-full shadow-md bg-neutral-50 px-1 absolute;" v-else>
     <ul class="flex flex-col space-y-1">
       <span
         class="flex space-x-6 items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded mb-6"
