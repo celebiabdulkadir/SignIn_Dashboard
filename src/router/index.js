@@ -21,13 +21,6 @@ const router = createRouter({
         {
           // UserProfile will be rendered inside User's <router-view>
           // when /user/:id/profile is matched
-          name: "Dashboard",
-          path: "Dashboard",
-          component: () => import("@/components/dashboard/Card/CardComp.vue"),
-        },
-        {
-          // UserProfile will be rendered inside User's <router-view>
-          // when /user/:id/profile is matched
           name: "Projects",
           path: "Projects",
           component: () => import("@/components/dashboard/Card/CardComp.vue"),

@@ -11,6 +11,7 @@ const props = defineProps(["title"]);
   <div class="flex space-x-4 sm:space-x-2 mt-2 w-full">
     <div class="flex space-x-64 sm:space-x-4 md:space-x-28 lg:space-x-32 xl:space-x-64">
       <div
+        v-show="store.currentRouteName != 'dashboard'"
         class="flex justify-center overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out"
       >
         {{ store.currentRouteName }}

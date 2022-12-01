@@ -99,6 +99,7 @@ export const useAddCard = defineStore("addCard", {
           this.progress = item.progress;
           this.task = item.task;
           this.user = item.user;
+          this.membersPictures = item.membersPictures;
         }
       });
     },

@@ -1,0 +1,97 @@
+[
+  {
+    "name": "User-1",
+    "picture": "https://picsum.photos/id/94/200/200",
+    "role": "QA-Tester"
+  },
+  {
+    "name": "User-2",
+    "picture": "https://picsum.photos/id/45/200/200",
+    "role": "Developer"
+  },
+  {
+    "name": "User-3",
+    "picture": "https://picsum.photos/id/11/200/200",
+    "role": "Developer"
+  },
+  {
+    "name": "User-4",
+    "picture": "https://picsum.photos/id/49/200/200",
+    "role": "Developer"
+  },
+  {
+    "name": "User-5",
+    "picture": "https://picsum.photos/id/72/200/200",
+    "role": "Developer"
+  },
+  {
+    "name": "User-6",
+    "picture": "https://picsum.photos/id/39/200/200",
+    "role": "Developer"
+  },
+  {
+    "name": "User-7",
+    "picture": "https://picsum.photos/id/28/200/200",
+    "role": "Developer"
+  },
+  {
+    "name": "User-8",
+    "picture": "https://picsum.photos/id/23/200/200",
+    "role": "Project Manager"
+  },
+  {
+    "name": "User-9",
+    "picture": "https://picsum.photos/id/40/200/200",
+    "role": "Project Manager"
+  },
+  {
+    "name": "User-10",
+    "picture": "https://picsum.photos/id/85/200/200",
+    "role": "Project Manager"
+  },
+  {
+    "name": "User-11",
+    "picture": "https://picsum.photos/id/41/200/200",
+    "role": "Business Analyst"
+  },
+  {
+    "name": "User-12",
+    "picture": "https://picsum.photos/id/77/200/200",
+    "role": "Business Analyst"
+  },
+  {
+    "name": "User-13",
+    "picture": "https://picsum.photos/id/99/200/200",
+    "role": "QA-Tester"
+  },
+  {
+    "name": "User-14",
+    "picture": "https://picsum.photos/id/98/200/200",
+    "role": "Product Owner"
+  },
+  {
+    "name": "User-15",
+    "picture": "https://picsum.photos/id/12/200/200",
+    "role": "Developer"
+  },
+  {
+    "name": "User-16",
+    "picture": "https://picsum.photos/id/54/200/200",
+    "role": "Developer"
+  },
+  {
+    "name": "User-17",
+    "picture": "https://picsum.photos/id/42/200/200",
+    "role": "Developer"
+  },
+  {
+    "name": "User-18",
+    "picture": "https://picsum.photos/id/30/200/200",
+    "role": "Developer"
+  },
+  {
+    "name": "User-19",
+    "picture": "https://picsum.photos/id/83/200/200",
+    "role": "Developer"
+  }
+]

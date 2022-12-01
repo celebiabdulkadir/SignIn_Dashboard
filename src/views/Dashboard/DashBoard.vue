@@ -29,9 +29,6 @@ store.fill();
 
     <div>
       <div class="flex flex-wrap"><HeaderComp></HeaderComp></div>
-      <div>
-        <FilterBarUpComp class="flex flex-wrap"></FilterBarUpComp>
-      </div>
 
       <div class="flex flex-column flex-wrap space-x-2 space-y-3">
         <RouterView></RouterView>

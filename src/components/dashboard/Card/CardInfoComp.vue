@@ -29,7 +29,7 @@ const props = defineProps(["task", "user"]);
 .card_task {
   position: relative;
   float: left;
-  width: 45%;
+  width: 50%;
   margin: 10px 5px 10px 0px;
   text-align: center;
   border-right: 1px solid #cddcee;
