@@ -1,6 +1,6 @@
 # Dashboard Project with Sign-in authentication
 
-This is a dashboard project which has sign-in authentication with firebase/firestore. 
+This is a dashboard project which has sign-in authentication with firebase/firestore. It is mobile responsive
 
 # Project tools
 
