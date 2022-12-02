@@ -5,7 +5,7 @@ store.fill();
 </script>
 
 <template>
-  <button @click="store.open">
+  <button @click="store.open" class="flex">
     <svg
       class="hover:text-white"
       width="127"

@@ -19,7 +19,7 @@ const cards = computed(() => {
 
 <template>
   <div class="flex flex-column flex-wrap">
-    <div>
+    <div class="flex">
       <FilterBarUpComp></FilterBarUpComp>
     </div>
     <div class="flex flex-wrap">
