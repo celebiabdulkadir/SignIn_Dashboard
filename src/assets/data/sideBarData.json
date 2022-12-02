@@ -1,7 +1,7 @@
 [
-  { "name": "Projects", "location": "/public/SideBarLogos/2.Logo.svg" },
-  { "name": "Modules", "location": "/public/SideBarLogos/3.Logo.svg" },
-  { "name": "Sprint", "location": "/public/SideBarLogos/4.Logo.svg" },
-  { "name": "Members", "location": "/public/SideBarLogos/5.Logo.svg" },
-  { "name": "Reports", "location": "/public/SideBarLogos/6.Logo.svg" }
+  { "name": "Projects", "location": "/SideBarLogos/2.Logo.svg" },
+  { "name": "Modules", "location": "/SideBarLogos/3.Logo.svg" },
+  { "name": "Sprint", "location": "/SideBarLogos/4.Logo.svg" },
+  { "name": "Members", "location": "/SideBarLogos/5.Logo.svg" },
+  { "name": "Reports", "location": "/SideBarLogos/6.Logo.svg" }
 ]
