@@ -1,6 +1,16 @@
-# vue-project
+# Dashboard Project with Sign-in authentication
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a dashboard project which has sign-in authentication with firebase/firestore. 
+
+# Project tools
+
+You can see tools below  while developing this project.
+
+### pinia
+### vue-router
+### firebase sign-in e-mail&password authentication
+### vite
+### vue-3
 
 ## Recommended IDE Setup
 
