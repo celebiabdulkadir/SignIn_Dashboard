@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from "vue";
+import { computed } from "vue";
 import CardStatus from "@/components/dashboard/Card/CardStatus.vue";
 import CardDateComp from "@/components/dashboard/Card/CardDateComp.vue";
 import CardPicturesComp from "@/components/dashboard/Card/CardPicturesComp.vue";
@@ -103,7 +103,10 @@ const cards = computed(() => {
             <div class="flex flex-row justify-between mr-2">
               <div><CardDateComp :date="item.startDate" /></div>
               <div>
-                <CardInfoComp :task="item.task" :user="item.user"></CardInfoComp>
+                <CardInfoComp
+                  :task="item.task"
+                  :user="item.user"
+                ></CardInfoComp>
               </div>
             </div>
           </div>

@@ -1,10 +1,8 @@
 <script setup>
-import { ref } from "vue";
 import SideBar from "@/components/dashboard/SideBar/SideBar.vue";
 import HeaderComp from "@/components/dashboard/Header/HeaderComp.vue";
-import FilterBarUpComp from "@/components/dashboard/FilterBar/FilterBarUpComp.vue";
 import AddPopUpComp from "./AddPopUpComp.vue";
-import { RouterLink, RouterView } from "vue-router";
+import { RouterView } from "vue-router";
 import { useAddCard } from "@/stores/useAddCard.js";
 import ToastMessage from "./ToastMessage.vue";
 import EditToastScreen from "./EditToastScreen.vue";
