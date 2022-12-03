@@ -1,5 +1,3 @@
-<script setup></script>
-
 <template>
   <div
     class="relative text-gray-600 focus-within:text-gray-400 w-80 sm:hidden md:w-40 lg:w-60 xl:w-80"

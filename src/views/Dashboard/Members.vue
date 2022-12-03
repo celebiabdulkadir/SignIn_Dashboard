@@ -1,5 +1,4 @@
 <script setup>
-import { ref, onMounted } from "vue";
 import members from "@/assets/data/members.json";
 </script>
 
