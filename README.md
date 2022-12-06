@@ -26,7 +26,7 @@ You can see tools below  while developing this project.
 
 ## You can experience the app live via link below
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/5000a189-2bb8-429c-9a42-d85b0a602254/deploy-status)](https://app.netlify.com/sites/signindashboard/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5000a189-2bb8-429c-9a42-d85b0a602254/deploy-status)](https://signindashboard.netlify.app/)
 ## Customize configuration
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
