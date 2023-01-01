@@ -6,13 +6,13 @@ import router from "./router";
 const isloggedIn = ref(false);
 
 const auth = ref();
-console.log(isloggedIn.value);
+
 onMounted(() => {
   auth.value = getAuth();
   onAuthStateChanged(auth.value, (user) => {
     if (user) {
       isloggedIn.value = true;
-      console.log(isloggedIn.value);
+      router.push("/dashboard");
     } else {
       isloggedIn.value = false;
     }
