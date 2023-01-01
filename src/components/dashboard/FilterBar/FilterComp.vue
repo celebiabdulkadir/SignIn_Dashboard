@@ -3,10 +3,7 @@ import { useAddCard } from "@/stores/useAddCard.js";
 
 const store = useAddCard();
 store.fill();
-// const filterHandler = (status) => {
-//   console.log(status);
-//   ;
-// };
+
 const filterTabData = ["All", "Active", "Inactive", "On Hold"];
 </script>
 

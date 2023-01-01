@@ -12,7 +12,6 @@ const store = useAddCard();
 store.fill();
 
 const cards = computed(() => {
-  console.log(store.filteredDataForSmt);
   return store.filteredDataForSmt;
 });
 </script>

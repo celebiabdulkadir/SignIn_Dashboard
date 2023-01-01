@@ -16,9 +16,7 @@ const signIn = async () => {
   signInWithEmailAndPassword(auth, email.value, password.value)
     .then((data) => {
       // Signed in
-      console.log(auth.currentUser.email);
 
-      console.log("signedIn");
       router.push("/dashboard");
 
       // ...
